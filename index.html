@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Countdown Timer</title>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <div class="container">
+        <svg id="progressBarContainer" width="144" height="300">
+            <defs>
+                <pattern id="pattern1" x="10" y="10" width="192" height="192" patternUnits="userSpaceOnUse">
+                    <path fill="black" d="M192 15v2a11 11 0 0 0-11 11c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H145v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11 13 13 0 1 1 .02 26 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43a6.1 6.1 0 0 0-3.03 4.87V143h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 181 164a11 11 0 0 0 11 11v2a13 13 0 0 1-13-13 12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84a6.1 6.1 0 0 0-4.87-3.03H145v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 124 181a11 11 0 0 0-11 11h-2a13 13 0 0 1 13-13c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43a6.1 6.1 0 0 0 3.03-4.87V145h-35.02a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 107 124a11 11 0 0 0-22 0c0 1.94 1.16 4.75 2.53 6.11l2.36 2.36a6.93 6.93 0 0 1 1.22 7.56l-.43.84a8.08 8.08 0 0 1-6.66 4.13H49v35.02a6.1 6.1 0 0 0 3.03 4.87l.84.43c1.58.79 4 .4 5.24-.85l2.36-2.36a12.04 12.04 0 0 1 7.51-3.11A13 13 0 0 1 81 192h-2a11 11 0 0 0-11-11c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V145H11.98a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 0 1 0 177v-2a11 11 0 0 0 11-11c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H47v-35.02a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 28 109a13 13 0 1 1 0-26c2.47 0 5.79 1.37 7.53 3.11l2.36 2.36a4.94 4.94 0 0 0 5.24.85l.84-.43A6.1 6.1 0 0 0 47 84.02V49H11.98a8.08 8.08 0 0 1-6.66-4.13l-.43-.84a6.91 6.91 0 0 1 1.22-7.56l2.36-2.36A10.06 10.06 0 0 0 11 28 11 11 0 0 0 0 17v-2a13 13 0 0 1 13 13c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84A6.1 6.1 0 0 0 11.98 47H47V11.98a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 68 11 11 11 0 0 0 79 0h2a13 13 0 0 1-13 13 12 12 0 0 1-7.53-3.11l-2.36-2.36a4.93 4.93 0 0 0-5.24-.85l-.84.43A6.1 6.1 0 0 0 49 11.98V47h35.02a8.08 8.08 0 0 1 6.66 4.13l.43.84a6.91 6.91 0 0 1-1.22 7.56l-2.36 2.36A10.06 10.06 0 0 0 85 68a11 11 0 0 0 22 0c0-1.94-1.16-4.75-2.53-6.11l-2.36-2.36a6.93 6.93 0 0 1-1.22-7.56l.43-.84a8.08 8.08 0 0 1 6.66-4.13H143V11.98a6.1 6.1 0 0 0-3.03-4.87l-.84-.43c-1.59-.8-4-.4-5.24.85l-2.36 2.36A12 12 0 0 1 124 13a13 13 0 0 1-13-13h2a11 11 0 0 0 11 11c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V47h35.02a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 179 28a13 13 0 0 1 13-13zM84.02 143a6.1 6.1 0 0 0 4.87-3.03l.43-.84c.8-1.59.4-4-.85-5.24l-2.36-2.36A12 12 0 0 1 83 124a13 13 0 1 1 26 0c0 2.47-1.37 5.79-3.11 7.53l-2.36 2.36a4.94 4.94 0 0 0-.85 5.24l.43.84a6.1 6.1 0 0 0 4.87 3.03H143v-35.02a8.08 8.08 0 0 1 4.13-6.66l.84-.43a6.91 6.91 0 0 1 7.56 1.22l2.36 2.36A10.06 10.06 0 0 0 164 107a11 11 0 0 0 0-22c-1.94 0-4.75 1.16-6.11 2.53l-2.36 2.36a6.93 6.93 0 0 1-7.56 1.22l-.84-.43a8.08 8.08 0 0 1-4.13-6.66V49h-35.02a6.1 6.1 0 0 0-4.87 3.03l-.43.84c-.79 1.58-.4 4 .85 5.24l2.36 2.36a12.04 12.04 0 0 1 3.11 7.51A13 13 0 1 1 83 68a12 12 0 0 1 3.11-7.53l2.36-2.36a4.93 4.93 0 0 0 .85-5.24l-.43-.84A6.1 6.1 0 0 0 84.02 49H49v35.02a8.08 8.08 0 0 1-4.13 6.66l-.84.43a6.91 6.91 0 0 1-7.56-1.22l-2.36-2.36A10.06 10.06 0 0 0 28 85a11 11 0 0 0 0 22c1.94 0 4.75-1.16 6.11-2.53l2.36-2.36a6.93 6.93 0 0 1 7.56-1.22l.84.43a8.08 8.08 0 0 1 4.13 6.66V143h35.02z"></path> 
+                </pattern>    
+            </defs>
+            <rect id="progressBar" x="0" y="0" width="144" height="300" style="fill: url(#pattern1);"/>
+       </svg>
+           
+           <div id="clock">
+            <p>Ready!</p>
+           </div>
+           
+           <div id="content">
+               <select class="selector" id="hours">
+                   <option value="0">0 hours</option>
+                   <option value="1">1 hours</option>
+                   <option value="2">2 hours</option>
+                   <option value="3">3 hours</option>
+                   <option value="4">4 hours</option>
+                   <option value="5">5 hours</option>
+                   <option value="6">6 hours</option>
+                   <option value="7">7 hours</option>
+                   <option value="8">8 hours</option>
+                   <option value="9">9 hours</option>
+                   <option value="10">10 hours</option>
+                   <option value="11">11 hours</option>
+                   <option value="12">12 hours</option>
+                   <option value="13">13 hours</option>
+                   <option value="14">14 hours</option>
+                   <option value="15">15 hours</option>
+                   <option value="16">16 hours</option>
+                   <option value="17">17 hours</option>
+                   <option value="18">18 hours</option>
+                   <option value="19">19 hours</option>
+                   <option value="20">20 hours</option>
+                   <option value="21">21 hours</option>
+                   <option value="22">22 hours</option>
+                   <option value="23">23 hours</option>
+               </select>
+               
+               <select class="selector" id="minutes">
+                   <option value="0">0 min</option>
+                   <option value="1">1 min</option>
+                   <option value="2">2 min</option>
+                   <option value="3">3 min</option>
+                   <option value="4">4 min</option>
+                   <option value="5">5 min</option>
+                   <option value="6">6 min</option>
+                   <option value="7">7 min</option>
+                   <option value="8">8 min</option>
+                   <option value="9">9 min</option>
+                   <option value="10">10 min</option>
+                   <option value="11">11 min</option>
+                   <option value="12">12 min</option>
+                   <option value="13">13 min</option>
+                   <option value="14">14 min</option>
+                   <option value="15">15 min</option>
+                   <option value="16">16 min</option>
+                   <option value="17">17 min</option>
+                   <option value="18">18 min</option>
+                   <option value="19">19 min</option>
+                   <option value="20">20 min</option>
+                   <option value="21">21 min</option>
+                   <option value="22">22 min</option>
+                   <option value="23">23 min</option>
+                   <option value="24">24 min</option>
+                   <option value="25">25 min</option>
+                   <option value="26">26 min</option>
+                   <option value="27">27 min</option>
+                   <option value="28">28 min</option>
+                   <option value="29">29 min</option>
+                   <option value="30">30 min</option>
+                   <option value="31">31 min</option>
+                   <option value="32">32 min</option>
+                   <option value="33">33 min</option>
+                   <option value="34">34 min</option>
+                   <option value="35">35 min</option>
+                   <option value="36">36 min</option>
+                   <option value="37">37 min</option>
+                   <option value="38">38 min</option>
+                   <option value="39">39 min</option>
+                   <option value="40">40 min</option>
+                   <option value="41">41 min</option>
+                   <option value="42">42 min</option>
+                   <option value="43">43 min</option>
+                   <option value="44">44 min</option>
+                   <option value="45">45 min</option>
+                   <option value="46">46 min</option>
+                   <option value="47">47 min</option>
+                   <option value="48">48 min</option>
+                   <option value="49">49 min</option>
+                   <option value="50">50 min</option>
+                   <option value="51">51 min</option>
+                   <option value="52">52 min</option>
+                   <option value="53">53 min</option>
+                   <option value="54">54 min</option>
+                   <option value="55">55 min</option>
+                   <option value="56">56 min</option>
+                   <option value="57">57 min</option>
+                   <option value="58">58 min</option>
+                   <option value="59">59 min</option>
+            </select>
+               
+            <select class="selector" id="seconds">
+                   <option value="0">0 sec</option>
+                   <option value="1">1 sec</option>
+                   <option value="2">2 sec</option>
+                   <option value="3">3 sec</option>
+                   <option value="4">4 sec</option>
+                   <option value="5">5 sec</option>
+                   <option value="6">6 sec</option>
+                   <option value="7">7 sec</option>
+                   <option value="8">8 sec</option>
+                   <option value="9">9 sec</option>
+                   <option value="10">10 sec</option>
+                   <option value="11">11 sec</option>
+                   <option value="12">12 sec</option>
+                   <option value="13">13 sec</option>
+                   <option value="14">14 sec</option>
+                   <option value="15">15 sec</option>
+                   <option value="16">16 sec</option>
+                   <option value="17">17 sec</option>
+                   <option value="18">18 sec</option>
+                   <option value="19">19 sec</option>
+                   <option value="20">20 sec</option>
+                   <option value="21">21 sec</option>
+                   <option value="22">22 sec</option>
+                   <option value="23">23 sec</option>
+                   <option value="24">24 sec</option>
+                   <option value="25">25 sec</option>
+                   <option value="26">26 sec</option>
+                   <option value="27">27 sec</option>
+                   <option value="28">28 sec</option>
+                   <option value="29">29 sec</option>
+                   <option value="30">30 sec</option>
+                   <option value="31">31 sec</option>
+                   <option value="32">32 sec</option>
+                   <option value="33">33 sec</option>
+                   <option value="34">34 sec</option>
+                   <option value="35">35 sec</option>
+                   <option value="36">36 sec</option>
+                   <option value="37">37 sec</option>
+                   <option value="38">38 sec</option>
+                   <option value="39">39 sec</option>
+                   <option value="40">40 sec</option>
+                   <option value="41">41 sec</option>
+                   <option value="42">42 sec</option>
+                   <option value="43">43 sec</option>
+                   <option value="44">44 sec</option>
+                   <option value="45">45 sec</option>
+                   <option value="46">46 sec</option>
+                   <option value="47">47 sec</option>
+                   <option value="48">48 sec</option>
+                   <option value="49">49 sec</option>
+                   <option value="50">50 sec</option>
+                   <option value="51">51 sec</option>
+                   <option value="52">52 sec</option>
+                   <option value="53">53 sec</option>
+                   <option value="54">54 sec</option>
+                   <option value="55">55 sec</option>
+                   <option value="56">56 sec</option>
+                   <option value="57">57 sec</option>
+                   <option value="58">58 sec</option>
+                   <option value="59">59 sec</option>
+            </select>
+           </div>
+           
+           <div class="buttonSelection">
+               <div class="button1">
+                   <button class="roundButton" id="start">Start</button>
+               </div>
+               <div class="button2">
+                   <button class="roundButton" id="cancel">Cancel</button>
+               </div>
+           </div>
+        
+        </div>
+        
+        <script>
+            document.getElementById("start").addEventListener('click', startTimer);
+            document.getElementById("cancel").addEventListener('click', cancelledBtnPressed);
+            
+            var startTime;
+            var endTime;
+            var origTimePeriod;
+            var newTimePeriod;
+            var timer;
+            var cancelled = false;
+            
+            function startTimer(){
+                cancelled = false;
+                startTime = new Date();
+                endTime = getEndTime();
+                
+                origTimePeriod = endTime.getTime() - startTime.getTime();
+                newTimePeriod = origTimePeriod;
+                
+                timer = setInterval(displayCountdown, 1000);
+            }
+            
+            function displayCountdown(){
+                var timeLeft = msToTime(newTimePeriod);
+                    
+                document.getElementById("clock").innerHTML = `<p>${timeLeft["hours"]}h ${timeLeft["minutes"]}m ${timeLeft["seconds"]}s</p>`;
+                
+                var newHeight = Math.floor(newTimePeriod/origTimePeriod * 100) * 3;
+                document.getElementById("progressBar").setAttribute("height", newHeight);
+                
+                newTimePeriod -= 1000;
+                
+                if(newTimePeriod < 0 || cancelled){
+                    clearInterval(timer);
+                    document.getElementById("clock").innerHTML = "<p>Complete!</p>";
+                }
+            }
+            
+            function cancelledBtnPressed(){
+                cancelled = true;
+            }
+            
+            function msToTime(milliseconds){
+                var mHour = 1000 * 60 * 60;
+                var mMinute = 1000 * 60;
+                var mSecond = 1000;
+                
+                var hours = Math.floor(milliseconds / mHour);
+                var minutes = Math.floor((milliseconds % mHour) / mMinute);
+                var seconds = Math.floor((milliseconds % mMinute) / mSecond);
+                
+                var time = [];
+                time["hours"] = hours;
+                time["minutes"] = minutes;
+                time["seconds"] = seconds;
+                
+                return time;
+            }
+            
+            function getEndTime(){
+                var dt = new Date();
+                
+                var hours = parseInt(document.getElementById("hours").value);
+                var minutes = parseInt(document.getElementById("minutes").value);
+                var seconds = parseInt(document.getElementById("seconds").value);
+                
+                dt.setHours(dt.getHours() + hours);
+                dt.setMinutes(dt.getMinutes() + minutes);
+                dt.setSeconds(dt.getSeconds() + seconds);
+                return dt;
+            }
+        </script>
+    </body>
+</html>
